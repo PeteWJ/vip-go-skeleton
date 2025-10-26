@@ -8,11 +8,23 @@
   },
   "require-dev": {
     "automattic/vipwpcs": "^3",
-    "phpcompatibility/phpcompatibility-wp": "^2"
+    "phpcompatibility/phpcompatibility-wp": "^2",
+    "phpunit/phpunit": "^9.5",
+    "yoast/phpunit-polyfills": "^1.0",
+    "wpsyntex/wp-phpunit": "dev-master",
+    "aaemnnosttv/wp-sqlite-db": "^1.3"
   },
   "config": {
     "allow-plugins": {
-      "dealerdirect/phpcodesniffer-composer-installer": true
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "composer/installers": true
     }
+  },
+  "scripts": {
+    "install-wp-tests": "bash bin/install-wp-tests.sh",
+    "test": "phpunit",
+    "test:sqlite": "phpunit -c phpunit-sqlite.xml.dist",
+    "test:coverage": "phpunit --coverage-html coverage",
+    "test:coverage:sqlite": "phpunit -c phpunit-sqlite.xml.dist --coverage-html coverage"
   }
 }
