@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<phpunit
+	bootstrap="tests/bootstrap-sqlite.php"
+	backupGlobals="false"
+	colors="true"
+	convertErrorsToExceptions="true"
+	convertNoticesToExceptions="true"
+	convertWarningsToExceptions="true"
+	beStrictAboutTestsThatDoNotTestAnything="true"
+	verbose="true"
+	>
+	<testsuites>
+		<testsuite name="default">
+			<directory suffix="-test.php">./tests/</directory>
+		</testsuite>
+	</testsuites>
+	<coverage>
+		<include>
+			<directory suffix=".php">./client-mu-plugins/</directory>
+			<directory suffix=".php">./plugins/</directory>
+			<directory suffix=".php">./themes/</directory>
+		</include>
+		<exclude>
+			<directory>./themes/twentytwenty*</directory>
+			<directory>./vendor/</directory>
+			<directory>./node_modules/</directory>
+			<directory suffix="-test.php">./tests/</directory>
+		</exclude>
+	</coverage>
+	<php>
+		<const name="WP_TESTS_PHPUNIT_POLYFILLS_PATH" value="vendor/yoast/phpunit-polyfills"/>
+	</php>
+</phpunit>

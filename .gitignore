@@ -45,3 +45,11 @@ phpcs.xml
 
 # Composer (repo root only)
 /vendor/
+
+# PHPUnit
+/coverage/
+.phpunit.result.cache
+phpunit.xml
+phpunit-sqlite.xml
+/tmp/
+DB-CONFIG
